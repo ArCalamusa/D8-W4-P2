@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cabin&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='D8 parte.css'>
+    <script src='D8 parte.js'></script>
+    
+</head>
+
+<body>
+    <div id='countdown'>
+        <input=display onClick="window.inizio = new Date(); countdown('0:2:3');" />
+        <!--avrei voluto usare input type="text" name="display" come per l'esercizio della calcolatrice, ma poi mi si creava un secondo rettangolo a causa dell'impiut-->
+    </div>
+    <form>
+        <div class="btStart">
+        <input type="button" onClick="window.inizio= new Date(); countdown('0:2:3');"value="inizio">
+        </div>  
+
+        <!--inizio domande-->
+        <h2>What does CPU stand for?</h2>
+        <p>CATEGORY: Science: Computers <br>
+            DIFFICULTY: easy</p>
+
+            <input type=radio value="a" name="1" onClick="Engine(1, this.value)">Central Processing Unit<br><!--ok-->
+            <input type=radio value="b" name="1" onClick="Engine(1, this.value)">Central Process Unit<br>
+            <input type=radio value="c" name="1" onClick="Engine(1, this.value)">Computer Personal Unit<br>
+            <input type=radio value="d" name="1" onClick="Engine(1, this.value)">Central Processor Unit<p>
+    
+        <h2>In the programming language Java, <br>
+            which of these keywords would you put on <br>
+            a variable to make sure it doesn&#039; <br>
+            t get modified?</h2>
+        <p>CATEGORY: Science: Computers <br>
+            DIFFICULTY: easy</p>
+
+            <input type=radio value="a" name="2" onClick="Engine(2, this.value)">Static<br>
+            <input type=radio value="b" name="2" onClick="Engine(2, this.value)">Final<br><!--ok-->
+            <input type=radio value="c" name="2" onClick="Engine(2, this.value)">Private<br>
+            <input type=radio value="d" name="2" onClick="Engine(2, this.value)">Public<p>
+    
+        <h2>The logo for Snapchat is a Bell</h2>
+        <p>CATEGORY: Science: Computers <br> 
+            DIFFICULTY: easy</p>
+
+        <!--<input type=radio value="a" name="3" onClick="Engine(3, this.value)">risposta 1<br>
+            <input type=radio value="b" name="3" onClick="Engine(3, this.value)">risposta 2<br>-->
+            <input type=radio value="c" name="3" onClick="Engine(3, this.value)">True<br><!--ok-->
+            <input type=radio value="d" name="3" onClick="Engine(3, this.value)">False<p>
+            <!-- qui ho dovuto "ingannare" il sistema perchè con un banale if sul boolean non ottenevo il risultato spetato ovvero il true o false-->
+
+        <h2>Pointers were not used in the original C <br>
+            programming language; they were added later on in C++.</h2>
+        <p>CATEGORY: Science: Computers <br>
+            DIFFICULTY: easy</p>
+    
+        <!--<input type=radio value="a" name="4" onClick="Engine(4, this.value)">risposta 1<br>
+            <input type=radio value="b" name="4" onClick="Engine(4, this.value)">risposta 2<br>-->
+            <input type=radio value="c" name="4" onClick="Engine(4, this.value)">True<br>
+            <input type=radio value="d" name="4" onClick="Engine(4, this.value)">False<p><!--ok-->
+        
+        <h2>What is the most preferred image format <br>
+            used for logos in the Wikimedia database?</h2>
+        <p>CATEGORY: Science: Computers <br> 
+            DIFFICULTY: easy</p>
+        
+            <input type=radio value="a" name="5" onClick="Engine(5, this.value)">.svg<br><!--ok-->
+            <input type=radio value="b" name="5" onClick="Engine(5, this.value)">.png<br>
+            <input type=radio value="c" name="5" onClick="Engine(5, this.value)">.jpeg<br>
+            <input type=radio value="d" name="5" onClick="Engine(5, this.value)">.gif<p>
+
+        <h2>In web design, what does CSS stand for?</h2>
+        <p>CATEGORY: Science: Computers <br>
+            DIFFICULTY: easy</p>
+                
+            <input type=radio value="a" name="6" onClick="Engine(6, this.value)">Counter Strike: Source<br>
+            <input type=radio value="b" name="6" onClick="Engine(6, this.value)">Cascading Style Sheet<br><!--ok-->
+            <input type=radio value="c" name="6" onClick="Engine(6, this.value)">Corrective Style Sheet<br>
+            <input type=radio value="d" name="6" onClick="Engine(6, this.value)">Computer Style Sheet<p>
+
+        <h2>What is the code name for the mobile <br>
+            operating system Android 7.0?</h2>
+        <p>CATEGORY: Science: Computers <br>
+            DIFFICULTY: easy</p>
+                        
+            <input type=radio value="a" name="7" onClick="Engine(7, this.value)">Ice Cream Sandwich<br>
+            <input type=radio value="b" name="7" onClick="Engine(7, this.value)">Jelly Bean<br>
+            <input type=radio value="c" name="7" onClick="Engine(7, this.value)">Nougat<br><!--ok-->
+            <input type=radio value="d" name="7" onClick="Engine(7, this.value)">Marshmallow<br>
+            
+        <h2>On Twitter, what is the character limit for a Tweet?</h2>
+        <p>CATEGORY: Science: Computers <br>
+            DIFFICULTY: easy</p>
+                            
+            <input type=radio value="a" name="8" onClick="Engine(8, this.value)">160<br>
+            <input type=radio value="b" name="8" onClick="Engine(8, this.value)">100<br>
+            <input type=radio value="c" name="8" onClick="Engine(8, this.value)">120<br>
+            <input type=radio value="d" name="8" onClick="Engine(8, this.value)">140<br><!--ok-->
+
+        <h2>On Twitter, whLinux was first created <br>
+            as an alternative to Windows XP</h2>
+        <p>CATEGORY: Science: Computers <br>
+            DIFFICULTY: easy</p>
+                                
+            <input type=radio value="a" name="9" onClick="Engine(9, this.value)">False<br><!--ok-->
+            <input type=radio value="b" name="9" onClick="Engine(9, this.value)">True<br>
+        <!--<input type=radio value="c" name="9" onClick="Engine(9, this.value)">120<br>
+            <input type=radio value="d" name="9" onClick="Engine(9, this.value)">140<br>-->
+
+        <h2>Which programming language shares <br>
+            its name with an island in Indonesia?</h2>
+        <p>CATEGORY: Science: Computers <br>
+            DIFFICULTY: easy</p>
+                                
+            <input type=radio value="a" name="10" onClick="Engine(10, this.value)">Python<br>
+            <input type=radio value="b" name="10" onClick="Engine(10, this.value)">Java<br><!--ok-->
+            <input type=radio value="c" name="10" onClick="Engine(10, this.value)">C<br>
+            <input type=radio value="d" name="10" onClick="Engine(10, this.value)">Jakarta<br>
+
+    <div class="btEnd">
+        <input type=button onClick="NextLevel()" value="Finito! Controlla le risposte">
+        <button id="startAgain">Ricomincia!</button>
+    </div>
+
+    </form>
+    
+    <div id='risultato'></div>
+    <div id="divStayTopLeft" style="position:absolute; left:10px; top:501px; height:28px">
+        
+    </div>
+    
+    
+</body> 
+</html>
+
+<!--CONCLUSIONI: ciao Luca, l'idea iniziale era quella di mostrare una sola domanda alla volta facendo passare, una volta data la risposta alla successifa fino alla decima, ma non ci sono riuscito; inoltre ho dovuto inserire le domande manualmente in teoria avrei voluto fare un file .js ad hoc per recuperarle dal domm e anche domande/risposte dovevano essere random, anche sui boleani ho avuto un po di problemi, anche la risposta dovrebbe essere inibita finchè non si sciaccia il tasto "inizia"; pertanto di chiedo se riesci a spiegarmi cosa avrei dovuto fare per ovviare a tali problemi. Grazie-->
+

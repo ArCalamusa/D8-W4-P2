@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+  <!--
+        ESERCIZI HTML
+
+        1) Assegna un titolo per questa pagina -> ok
+        2) Crea un tag h1 con il contenuto che preferisci -> ok
+        3) Crea una lista ordinata con alcuni elementi al suo interno -> ok
+        4) Crea una tabella con 4 righe e 5 colonne -> ok
+        5) Aggiungi un'immagine a ogni seconda cella di ogni riga -> ok
+        6) Aggiungi un tag <a> ad ogni immagine -> ok
+        7) Unisci insieme 2 celle della tabella -> ok
+        8) Dividi la pagina inserendo una riga orizzontale -> ok
+        9) Crea un elemento contenitore con al suo interno un paragrafo e una lista non ordinata -> ok
+        10) Crea un footer contenente alcune informazioni sul creatore della pagina -> ok
+
+        ESERCIZI CSS
+
+        11) Assegna una larghezza massima al tag body e centralo nella pagina ->ok
+        12) Centra ogni tag h1 -> ok
+        13) Cambia il colore di ogni link nella pagina -> ok
+        14) Crea una classe e assegnale un bordo ->ok
+        15) Fai in modo che la i bordi della tabella che hai creato siano arrotondati ->ok
+        16) Aggiungi un margine ad ogni paragrafo ->ok
+        17) Crea una classe che una volta assegnata cambi la dimensione e il peso del font ->ok
+        18) Crea una classe per nascondere un elemento ->ok
+        19) Aggiungi un bordo verde a ogni <td> ->ok
+        20) Aggiungi un bordo puntato rosso a ogni <tr> (nota: <tr> non accetta una proprietà "border") ->ok
+
+        ESERCIZI JAVASCRIPT
+
+        21) Date le variabili x = "John" e y = "Doe", mostra in console "John <> Doe"
+        
+        var x = "John" 
+        var y = "Doe"
+        console.log(x,"<>",y);
+
+        22) Crea un oggetto con le seguenti proprietà: name, surname, email
+
+        var persona = {name: "Mario", surname: "rossi", email: "mario.rossi@email.com"};
+
+        var person = {name: "Mario",
+                      surname: "rossi",
+                      email: "mario.rossi@email.com"};
+
+        23) Cancella la proprietà email dall'oggetto appena creato
+
+        delete person["email"]; può andar bene anche 'delete person[2];' in quanto partendo da 0 email è il 3 (quindi il 2) valore contenuto nell'oggetto 
+
+        24) Crea un array contenente 10 stringhe
+
+        const calciatori = ["ronaldo", "messi", "maradona", "pele", "baggio", "zanetti", "maldini", "gerrard", "beckham", "cruijff"];
+
+        25) Mostra in console ogni stringa del precedente array
+
+        const calciatori = ["ronaldo", "messi", "maradona", "pele", "baggio", "zanetti", "maldini", "gerrard", "beckham", "cruijff"];
+        calciatori.forEach(element => console.log(element));
+
+        26) Crea un array contenente 100 numeri random
+
+        var arr = [];
+        while (arr.length <= 100) {
+        const rand = Math.floor(Math.random() * 99 + 1)
+        if (!arr.includes(rand)){
+        arr.push(rand)
+        }
+        }
+
+        27) Scrivi una funzione per trovare il valore massimo e il valore minimo dall'array appena creato
+
+        function maxNum(arr){
+        var max = Math.max.apply(null, arr);
+          return max;
+        }
+
+        function minNum(arr){
+        var min = Math.min.apply(null, arr);
+          return min;
+        }
+
+        document.write("Il valore massimo dell'array è: "+maxNum(my_array));
+        document.write("<br />");
+        document.write("Il valore minimo dell'array è: "+minNum(my_array));
+
+        28) Crea un array di array, nel quale ogni array "figlio" ha 10 numeri random
+        29) Crea una funzione che riceve 2 array come parametri e ritorni quello con più elementi
+        30) Crea una funzione che riceve 2 array numerici come parametri e ritorna quello con la somma totale degli elementi maggiore
+
+        ESERCIZI SUL DOM
+
+        31) Seleziona l'elemento con id "container" nella pagina
+
+        document.getElementById("container");
+
+
+        32) Seleziona tutti gli elementi di tipo <td> nella pagina
+
+        document.getElementsByTagName("td");
+
+        33) Usa un ciclo per stampare in console il testo contenuto in ogni elemento <td> nella pagina
+
+        34) Scrivi una funzione per cambiare il titolo della pagina
+
+        var title = document.getElementsByTagName('title')[0]; 
+        var testo = document.getElementById("area");
+    
+        function cambiaTitolo(){ 
+        title.innerHTML = testo.value;
+        }
+
+        35) Scrivi una funzione per aggiungere una nuova riga alla tabella nella pagina
+
+        function aggiungiRiga(id_table){
+        var table = document.getElementById(id_table);
+        var tbody = table.getElementsByTagName('tbody')[0];
+        var colonne = table.getElementsByTagName('th').length; 
+        var tr = document.createElement('tr');
+        for(var i=0; i<colonne; i++){
+        var td = document.createElement('td');
+        var tx = document.createTextNode(prompt("Inserisci testo per cella "+(i+1),""));
+
+        td.appendChild(tx);
+        tr.appendChild(td);
+        
+        }
+        tbody.appendChild(tr);
+        }
+
+
+        36) Scrivi una funzione per aggiungere la classe "test" ad ogni riga nella tabella
+        37) Scrivi una funzione per aggiungere uno sfondo rosso a ogni link presente nella pagina
+        38) Mostra in console "Page loaded" quando la pagina ha finito di caricarsi
+
+        document.addEventListener("DOMContentLoaded", page loaded);
+
+        39) Scrivi una funzione per aggiungere nuovi elementi alla lista non ordinata nella pagina
+        40) Scrivi una funzione per svuotare una lista nella pagina
+
+        ESERCIZI EXTRA
+
+        41) Aggiungi un event listener in modo che compaia un alert quando il cursore passa sopra un link; l'alert deve mostrare la sua proprietà href
+        42) Crea un bottone che una volta cliccato nasconde ogni immagine nella pagina
+
+        <button onclick='document.getElementById("immagine").style.visibility = "visible"'>Visibile</button> 
+        <button onclick='document.getElementById("immagine").style.visibility = "hidden"'>Nascosto</button> 
+
+        43) Crea un bottone che una volta cliccato nasconde o mostra la tabella nella pagina
+
+        <button onclick='document.getElementById("table").style.visibility = "visible"'>Visibile</button> 
+        <button onclick='document.getElementById("table").style.visibility = "hidden"'>Nascosto</button> 
+
+        44) Crea una funzione per calcolare la somma di ogni numero contenuto in tutte le celle della tabella (se il contenuto è un numero)
+
+        45) Cancella l'ultima lettera dal titolo della pagina ogni volta che l'utente ci clicca sopra
+        46) Aggiungi un event listener in modo che cliccando un <td> nella pagina, questo cambi colore di sfondo
+        47) Aggiungi un bottone che una volta cliccato elimini un <td> a caso nella tabella
+        48) Aggiungi automaticamente un bordo rosa ad una cella della tabella quando il cursore ci passa sopra
+        49) Scrivi una funzione per creare una tabella con 4 righe e 3 colonne e aggiungerla alla fine della pagina
+
+        //prima riga
+        let row_1 = document.createElement('tr');
+        let heading_1 = document.createElement('th');
+        heading_1.innerHTML = "1A";
+        let heading_2 = document.createElement('th');
+        heading_2.innerHTML = "1B";
+        let heading_3 = document.createElement('th');
+        heading_3.innerHTML = "1C";
+
+        row_1.appendChild(heading_1);
+        row_1.appendChild(heading_2);
+        row_1.appendChild(heading_3);
+        thead.appendChild(row_1);
+
+        //seconda riga
+        let row_2 = document.createElement('tr');
+        let row_2_data_1 = document.createElement('td');
+        row_2_data_1.innerHTML = "2A";
+        let row_2_data_2 = document.createElement('td');
+        row_2_data_2.innerHTML = "2B";
+        let row_2_data_3 = document.createElement('td');
+        row_2_data_3.innerHTML = "2C";
+
+        row_2.appendChild(row_2_data_1);
+        row_2.appendChild(row_2_data_2);
+        row_2.appendChild(row_2_data_3);
+        tbody.appendChild(row_2);
+
+
+        //terza riga  
+        let row_3 = document.createElement('tr');
+        let row_3_data_1 = document.createElement('td');
+        row_3_data_1.innerHTML = "3A";
+        let row_3_data_2 = document.createElement('td');
+        row_3_data_2.innerHTML = "3B";
+        let row_3_data_3 = document.createElement('td');
+        row_3_data_3.innerHTML = "3C";
+
+        row_3.appendChild(row_3_data_1);
+        row_3.appendChild(row_3_data_2);
+        row_3.appendChild(row_3_data_3);
+        tbody.appendChild(row_3);
+
+        //quarta riga  
+        let row_4 = document.createElement('tr');
+        let row_4_data_1 = document.createElement('td');
+        row_4_data_1.innerHTML = "4A";
+        let row_4_data_2 = document.createElement('td');
+        row_4_data_2.innerHTML = "4B";
+        let row_3_data_3 = document.createElement('td');
+        row_4_data_3.innerHTML = "4C";
+
+        row_4.appendChild(row_4_data_1);
+        row_4.appendChild(row_4_data_2);
+        row_4.appendChild(row_4_data_3);
+        tbody.appendChild(row_4);
+
+
+        50) Scrivi una funzione per rimuovere l'ultima tabella presente nella pagina -->
+    
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>D8 50ex</title>
+        <link rel='stylesheet' type='text/css' media='screen' href='50ex.css'>
+        <script src='50ex.js'></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cabin&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        </head>
+  <body cz-shortcut-listen="true">
+  <h1>Hello world!</h1>
+  <ol>
+    <h3>Regioni d'Italia</h3>
+    <li>Abruzzo</li>
+    <li>Basilicata</li>
+    <li>Calabria</li>
+    <li>Campania</li>
+    <li>Emilia Romagna</li>
+    <li>Friuli Venezia Giulia</li>
+    <li>Lazio</li>
+    <li>Liguria</li>
+    <li>Lombardia</li>
+    <li>Marche</li>
+    <li>Molise</li>
+    <li>Piemonte</li>
+    <li>Puglia</li>
+    <li>Sardegna</li>
+    <li>Sicilia</li>
+    <li>Toscana</li>
+    <li>Trentino Alto Adige</li>
+    <li>Umbria</li>
+    <li>Val d'Aosta</li>
+    <li>Veneto</li>
+  </ol>
+
+  <table class="special">
+    
+    <tr>
+      <td>A1</td>
+      <td><a href="#"><img src="assets/EPICODE.png" height="60px"></a></td>
+      <td colspan=2>C1+D1</td>
+      <td>E1</td>
+    </tr>
+    
+    <tr>
+      <td>A2</td>
+      <td><a href="#"><img src="assets/EPICODE.png" height="60px"></a></td>
+      <td colspan=2>C2+D2</td>
+      <td>E2</td>
+    </tr> 
+    
+    <tr>
+      <td>A3</td>
+      <td><a href="#"><img src="assets/EPICODE.png" height="60px"></a></td>
+      <td colspan=2>C3+D3</td>
+      <td>E3</td>
+    </tr> 
+    
+    <tr>
+      <td>A4</td>
+      <td><a href="#"><img src="assets/EPICODE.png" height="60px"></a></td>
+      <td colspan=2>C4+D4</td>
+      <td>E4</td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <div>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+    <!-- iniziamente pensavo la traccia indicasse in elemento a scomparsa con "details" ma approfondendo ho capito che si intendeva nascondere con il .css però dato che la proprietà è bella, la lascio-->
+    <div class="hide">
+      <details open>
+        <summary>Cos'è il metaverso</summary>
+        <p>Nella letteratura futurista e nella fantascienza, il metaverso è un'ipotetica iterazione di Internet come un unico mondo virtuale universale e immersivo, facilitato dall'uso di cuffie per la realtà virtuale e la realtà aumentata.</p>
+      </details>
+    </div>
+
+    <ul>
+      <h3>Colori</h3>
+      <li>Verde</li>
+      <li>Rosso</li>
+      <li>Blu</li>
+      <li>Nero</li>
+    </ul>
+  </div>
+
+  <footer id="footer">
+    &copy; 2023 made with &hearts; by Arcangelo
+</footer>
+</body>
+
+</html>
