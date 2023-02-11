@@ -1,60 +1,47 @@
 body {
-    display: grid;
-    justify-content: center;
+    margin: 5% 20%;
     background: linear-gradient(45deg, #2d27df, #ca2276);
     /*colori del sito di epiccode prelevati con colorzilla*/
     font-family: 'Roboto', sans-serif;
-}
-
-h2, p {
-    font-family: 'Cabin', sans-serif;
-    
-}
-
-p {
-    font-weight: 400;
-}
-
-#countdown {
-    background: #eee;
-    font-weight: bold;
-    font-size: 50px;
-    width: 240px;
-    height: 60px;
-    border-radius: 10px;
+    color: white;
     text-align: center;
 }
 
-.btStart {
-    margin-left: 30px;
+.button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Cabin', sans-serif;
 }
 
-button, input[type="button"]{
-    margin: 30px 0px;
-    color: #444;
-    width:180px;
-    height:50px;
-    border-radius: 6px;
-    box-shadow: 0px 2px 0px #D9D9D9 inset;
+#invio {
+    background-color: white;
+    color: black;
+    border: 2px solid  #2d27df;
 }
 
-button, input[type="button"]:hover {
-    background: rgb(225,255,255); /* vecchi browsers */
-    background: -moz-linear-gradient(top, rgba(225,255,255,1) 0%, rgba(225,255,255,1) 7%, rgba(225,255,255,1) 12%, rgba(253,255,255,1) 12%, rgba(230,248,253,1) 30%, rgba(200,238,251,1) 54%, rgba(190,228,248,1) 75%, rgba(177,216,245,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(225,255,255,1)), color-stop(7%,rgba(225,255,255,1)), color-stop(12%,rgba(225,255,255,1)), color-stop(12%,rgba(253,255,255,1)), color-stop(30%,rgba(230,248,253,1)), color-stop(54%,rgba(200,238,251,1)), color-stop(75%,rgba(190,228,248,1)), color-stop(100%,rgba(177,216,245,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, rgba(225,255,255,1) 0%,rgba(225,255,255,1) 7%,rgba(225,255,255,1) 12%,rgba(253,255,255,1) 12%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, rgba(225,255,255,1) 0%,rgba(225,255,255,1) 7%,rgba(225,255,255,1) 12%,rgba(253,255,255,1) 12%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, rgba(225,255,255,1) 0%,rgba(225,255,255,1) 7%,rgba(225,255,255,1) 12%,rgba(253,255,255,1) 12%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%); /* IE10+ */
-    background: linear-gradient(to bottom, rgba(225,255,255,1) 0%,rgba(225,255,255,1) 7%,rgba(225,255,255,1) 12%,rgba(253,255,255,1) 12%,rgba(230,248,253,1) 30%,rgba(200,238,251,1) 54%,rgba(190,228,248,1) 75%,rgba(177,216,245,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1ffff', endColorstr='#b1d8f5',GradientType=0 ); /* IE6-9 */
+#invio:hover {
+    background-color: #2d27df;
+    color: white;
 }
 
-/* bottone "Ricomincia!" diverso dagli altri in quanto trasformandolo in input type=button o anche facendo l'opposto, ovvero trasformare gli altri 2 in button ho avuto difficolta a gestire le function di js */
+#reset {
+    background-color: white;
+    color: black;
+    border: 2px solid #ca2276;
+}
 
+#reset:hover {
+    background-color: #ca2276;
+    color: white;
+}
 
-
-
-
-
-
-
+footer {
+    margin-top: 10%;
+}
