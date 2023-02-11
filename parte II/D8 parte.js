@@ -1,146 +1,196 @@
-function countdown(tempo) {
-    
-var div = document.getElementById('countdown');
-var tmp = tempo.split(":");
+//array di domande
+const questions = [
+    {
+        category: 'Science: Computers',
+        type: 'multiple',
+        difficulty: 'easy',
+        question: 'What does CPU stand for?',
+        correct_answer: 'Central Processing Unit',
+        incorrect_answers: ['Central Process Unit', 'Computer Personal Unit', 'Central Processor Unit']
+        //sottoArray
+    }, {
+        category: 'Science: Computers',
+        type: 'multiple',
+        difficulty: 'easy',
+        question: 'In the programming language Java, which of these keywords would you put on a v' +
+            'ariable to make sure it doesn&#039;t get modified?',
+        correct_answer: 'Final',
+        incorrect_answers: ['Static', 'Private', 'Public']
+    }, {
+        category: 'Science: Computers',
+        type: 'boolean',
+        difficulty: 'easy',
+        question: 'The logo for Snapchat is a Bell.',
+        correct_answer: 'False',
+        incorrect_answers: ['True']
+    }, {
+        category: 'Science: Computers',
+        type: 'boolean',
+        difficulty: 'easy',
+        question: 'Pointers were not used in the original C programming language; they were added' +
+            ' later on in C++.',
+        correct_answer: 'False',
+        incorrect_answers: ['True']
+    }, {
+        category: 'Science: Computers',
+        type: 'multiple',
+        difficulty: 'easy',
+        question: 'What is the most preferred image format used for logos in the Wikimedia databa' +
+            'se?',
+        correct_answer: '.svg',
+        incorrect_answers: ['.png', '.jpeg', '.gif']
+    }, {
+        category: 'Science: Computers',
+        type: 'multiple',
+        difficulty: 'easy',
+        question: 'In web design, what does CSS stand for?',
+        correct_answer: 'Cascading Style Sheet',
+        incorrect_answers: ['Counter Strike: Source', 'Corrective Style Sheet', 'Computer Style Sheet']
+    }, {
+        category: 'Science: Computers',
+        type: 'multiple',
+        difficulty: 'easy',
+        question: 'What is the code name for the mobile operating system Android 7.0?',
+        correct_answer: 'Nougat',
+        incorrect_answers: ['Ice Cream Sandwich', 'Jelly Bean', 'Marshmallow']
+    }, {
+        category: 'Science: Computers',
+        type: 'multiple',
+        difficulty: 'easy',
+        question: 'On Twitter, what is the character limit for a Tweet?',
+        correct_answer: '140',
+        incorrect_answers: ['120', '160', '100']
+    }, {
+        category: 'Science: Computers',
+        type: 'boolean',
+        difficulty: 'easy',
+        question: 'Linux was first created as an alternative to Windows XP.',
+        correct_answer: 'False',
+        incorrect_answers: ['True']
+    }, {
+        category: 'Science: Computers',
+        type: 'multiple',
+        difficulty: 'easy',
+        question: 'Which programming language shares its name with an island in Indonesia?',
+        correct_answer: 'Java',
+        incorrect_answers: ['Python', 'C', 'Jakarta']
+    }
+]
 
-var oggi = new Date();
-    oggi.setHours(tmp[0]);
-    oggi.setMinutes(tmp[1]);
-    oggi.setSeconds(tmp[2]);
-
-var hour = oggi.getHours();
-var minu = oggi.getMinutes();
-var seco = oggi.getSeconds();
-
-div.innerHTML = (hour < 10? "0": "") 
-+ hour + ":" + (minu < 10? "0": "") 
-+ minu + ":" + (seco < 10? "0": "") 
-+ seco;
-
-//ciclo for
-if (oggi.getHours() == 0 && oggi.getMinutes() == 0 && oggi.getSeconds() == 0) {
-    alert("Contdown terminato!");
-    //interazione con utente
-} else {
-    oggi.setTime(oggi.getTime() - 1000);
-    var newt = oggi.getHours() + ":" + oggi.getMinutes() + ":" + oggi.getSeconds();
-    setTimeout(function () {
-    countdown(newt);
-    }, 1000);
-}
-}
-    
-var ans = new Array;
-var done = new Array;
-var stat = new Array;
-var score = 0;
-var count = 0;
-
-//risposte corrette
-ans[1] = "a";
-ans[2] = "b";
-ans[3] = "c";
-ans[4] = "d";
-ans[5] = "a";
-ans[6] = "b";
-ans[7] = "c";
-ans[8] = "d";
-ans[9] = "a";
-ans[10] = "b";
-
-//se si effettua tentativo di rispondere più volte alla stessa domanda
-function Engine( question, answer ) {
-if ( answer != ans[ question ] ) {
-if ( ! done[ question ] ) {
-done[ question ] = -1; stat[ question ] = false; count++;
-} else {
-    alert( "Hai gia risposto a questa domanda!" );
-    //interazione con utente
-}
-} else {
-if ( ! done[ question ] ) {
-done[ question ] = -1;
-score++;
-stat[ question ] = true;
-count++;
-} else { 
-    alert( "Hai gia risposto a questa domanda!" );
-    //interazione con utente
-}
-}
-    
-if ( count == ans.length ) { NextLevel() }
-}
-    
-function NextLevel () {
-    
-var fine = new Date();
-var differenza = ( fine.getTime() - window.inizio.getTime()) / 1000;
-var mm = parseInt ( differenza / 60 );
-var hh = parseInt ( mm / 60 );
-    
-var htm = "Hai completato il quiz in " + hh + " ore, " + ( mm - ( hh * 60 ) ) + " minuti e " + ( differenza - ( mm * 60 ) ) + " secondi." + "<br>" + "Il tuo punteggio &egrave; di " + score + " su " + (ans.length-1) + ":" + "<br><br>";
-    
-for ( var j = 1; j < stat.length; j++ ) {
-htm += "Risposta " + j + ": <span style='color:" + ( stat[ j ] ? "green'>esatta" : "red'>errata" ) + "</span><br>";
-}
-    
-document.getElementById( 'risultato' ).innerHTML = htm;
-//per prelevare rislutato
-}
-
-var verticalpos = "frombottom"
-
-function JSFX_FloatTopDiv() {
-    var startX = 250,
-        startY = 250;
-    var ns = (navigator.appName.indexOf("Netscape") != -1);
-    var d = document;
-    function ml(id) {
-        var el = d.getElementById
-            ? d.getElementById(id)
-            : d.all
-                ? d.all[id]
-                : d.layers[id];
-        if (d.layers) 
-            el.style = el;
-        el.sP = function (x, y) {
-            this.style.left = x;
-            this.style.top = y;
-        };
-        el.x = startX;
-        if (verticalpos == "fromtop") 
-            el.y = startY;
-        else {
-            el.y = ns
-                ? pageYOffset + innerHeight
-                : document.body.scrollTop + document.body.clientHeight;
-            el.y -= startY;
+window.onload = function () {
+    //assegnamo la proprietà onload alla funzione () dell'oggetto finestra (window)
+    let mainQuestion = document.getElementById('mainContent')
+    //let quest = questions.length; diventa superflua perchè dichiariamo la questions.lenght nel ciclo for
+    for (let i = 0; i < questions.length; i++) {
+        //accetta 3 parametri: dichiara variabile, condizione e incremento o decremento
+        // let i=0 inizializza la variabile 
+        const question = questions[i]//variabile sola lettura
+        //console.log(question); //elemento indice [i] di questions
+        //funzione che srve per stampare nella console del browser
+        let divQuestion = document.createElement('div'); //crea div nell'html non visibile prima di appenderli al dom
+        divQuestion.classList.add('questionContainer');
+        let labelQuestion = document.createElement('label');
+        labelQuestion.classList.add('questionTitle');
+        //let inputQuestion = document.createElement('input'); 
+        //creati 3 elementi separati occorre definire gerarchia input e label sono dentro al div
+        //labelQuestion.classList.add('answer');
+        labelQuestion.innerText = question.question;
+        //si sta dicedo al nodo di insere  
+        //divQuestion.appendChild(labelQuestion); //tra parentesi tonde perchè è una funzione, variabile non tra apici
+        let invio = document.createElement('br');
+        divQuestion.append(labelQuestion, invio);
+        
+        let completeAnswer = []; //vuoto
+        completeAnswer.push(question.correct_answer);//risposte corrette
+        for (let answer of question.incorrect_answers) { //per ogni val di incorrect il valore di array
+            completeAnswer.push(answer); //risposte errate
         }
-        return el;
+        //console.log(completeAnswer);
+        //qui potrebbe andarci il Math.random per dare una casualità all'ordine delle risposte
+
+        for (let j = 0; j < completeAnswer.length; j++) { //conta le risposte
+            let inputAnswerRadio = document.createElement('input');//name id type
+            inputAnswerRadio.name = 'question' + i; //i variabile
+            inputAnswerRadio.type = 'radio'; //tipologia input
+            inputAnswerRadio.id = 'question' + i + j; //id diverso per ogni domanda/risp univoco
+            inputAnswerRadio.value = completeAnswer[j];
+            inputAnswerRadio.required = true;
+
+            let answerLabel = document.createElement('label');
+            answerLabel.innerText = completeAnswer[j];
+            answerLabel.setAttribute('for', inputAnswerRadio.id);
+            //il for si usa per attribuirlo alla label
+            let invioElemento = document.createElement('br');
+            divQuestion.appendChild(invioElemento);
+            divQuestion.append(inputAnswerRadio, answerLabel);
+            //metodo alternativo per "appendere" più elementi
+        }
+
+        let hrElemento = document.createElement('hr');
+        divQuestion.appendChild(hrElemento);
+        mainQuestion.appendChild(divQuestion);
     }
-window.stayTopLeft = function () {
-    if (verticalpos == "fromtop") {
-        var pY = ns
-            ? pageYOffset
-            : document.body.scrollTop;
-        ftlObj.y += (pY + startY - ftlObj.y) / 8;
-    } else {
-        var pY = ns
-            ? pageYOffset + innerHeight
-            : document.body.scrollTop + document.body.clientHeight;
-        ftlObj.y += (pY - startY - ftlObj.y) / 8;
-    }
-    ftlObj.sP(ftlObj.x, ftlObj.y);
-    setTimeout("stayTopLeft()", 10);
-}
-ftlObj = ml("divStayTopLeft");
-stayTopLeft();
 }
 
-//per ricominciare il quiz
-let startAgain = document.querySelector("#startAgain");
+function calcolaRisultato() {
+    let risposte = [];
+    let i = 0; //inizializzo i
+    while (questionRadio = document.getElementsByName('question' + i)) {
+        //recupera dal dom tutti gli elementi con lo stesso name; restituisce un array di elementi 4 multipla e 2 boolean
+        if (questionRadio.length == 0) {
+            break;
+        }
+        //console.log(questionRadio);
+        for (let k = 0; k < questionRadio.length; k++) {
+            if (questionRadio[k].checked) {
+                risposte.push(questionRadio[k].value);
+                //inserisco la risposta dell'utente nell'array
+            }
+        }
+        i++;
+    }
+    //console.log(risposte);
+    let contatore = 0;
+    for (let i = 0; i < risposte.length; i++) {
+        if (risposte[i] == questions[i].correct_answer) {
+            contatore++;
+        }
+    }
+    //console.log(contatore);
+    if (risposte.length == questions.length) { //per risultato devono essere inviate tutte le risposte
+        let punteggio = document.getElementById('punteggio');
+        punteggio.innerText = contatore;
+        document.getElementById('output').style.display = 'inherit'; //mostra il contatore all'invio del quiz non si salva in variabile
+        //document.getElementById('invio').disabled = true; //disabilita invio
+        abilitaDisabilitaRadio();
+    }
+}
+function abilitaDisabilitaRadio(disabilita = true) {
+    let i = 0;
+    document.getElementById('invio').disabled = disabilita; //la funzione disabilita invio
+    while (questionRadio = document.getElementsByName('question' + i)) {
+        if (questionRadio.length == 0) {
+            break;
+        }
+        for (let k = 0; k < questionRadio.length; k++) {
+            questionRadio[k].disabled = disabilita;
+        }
+        i++; //incrementa l'indice nel while
+    }
+}
 
-startAgain.addEventListener("click", () => { //funzione freccia trovata sul web, Arrow function: eliminano la necessità di digitare la parola "function"
-    window.location.reload();
-});
+function resetQuiz() {
+    document.getElementById('output').style.display = 'none';
+    abilitaDisabilitaRadio(false); //riabilita i bottoni
+    //document.getElementById('invio').disabled = false;
+    let i = 0;
+    while (questionRadio = document.getElementsByName('question' + i)) {
+        if (questionRadio.length == 0) {
+            break;
+        }
+        for (let k = 0; k < questionRadio.length; k++) {
+            questionRadio[k].checked = false;
+        }
+        i++; //incrementa l'indice nel while
+    }
+}
