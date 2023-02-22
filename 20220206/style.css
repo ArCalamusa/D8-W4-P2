@@ -1,0 +1,49 @@
+body {
+    margin: 5% 20%;
+    background: linear-gradient(45deg, #2d27df, #ca2276);
+    /*colori del sito di epiccode prelevati con colorzilla*/
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+button {
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    font-family: 'Cabin', sans-serif;
+    border-radius: 10px;
+    margin: 20px 5px;
+}
+
+#invio {
+    background-color: white;
+    color: black;
+    border: 2px solid  #2d27df;
+}
+
+#invio:hover {
+    background-color: #2d27df;
+    color: white;
+}
+
+#reset {
+    background-color: white;
+    color: black;
+    border: 2px solid #ca2276;
+}
+
+#reset:hover {
+    background-color: #ca2276;
+    color: white;
+}
+
+footer {
+    margin-top: 10%;
+}
